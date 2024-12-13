@@ -68,7 +68,7 @@ public class NoticeService {
 		
 		try {
 			ResponseEntity<String> response = restTemplate.postForEntity(apiEndpoint, request, String.class);
-			// System.out.println(response.getBody());
+			System.out.println(response.getBody());
 			return response;
 		} catch (Exception e) {
 			System.out.println(e);
