@@ -20,19 +20,18 @@ public class NoticeRepository {
 	 * redis-cli command 
 	 * 	hdel myhashmap a_key
 	 *
-	 * hset keyName mapKey object
+	 * set key value
 	 * randomkey
 	 */
-	public void insertNotices(String keyName, String mapKey, Object object) {
-		template.opsForHash().put(keyName, mapKey, object);
+
+	//  set key value
+	public void insertNotices(String key, Object value) {
+		template.opsForValue().set(key, value);
 	}
 
-	public long mapSize(String keyName) {
-		return template.opsForHash().size(keyName);
-	}
-
-	public Object getValue(String keyName) {
-		return template.opsForHash().randomKey(keyName);
+	// randomkey
+	public String getRandomValue() {
+		return template.randomKey();
 	}
 
 }
