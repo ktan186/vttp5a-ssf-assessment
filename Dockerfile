@@ -22,7 +22,7 @@ COPY --from=builder /src/target/noticeboard-0.0.1-SNAPSHOT.jar app.jar
 # check if curl command is available
 RUN apt update && apt install -y curl
 
-ENV PORT=8080
+ENV PORT=3000
 # placeholder for api, will override later by env variable in railway
 ENV api.endpoint=https://publishing-production-d35a.up.railway.app/notice
 

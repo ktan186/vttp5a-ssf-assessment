@@ -3,7 +3,6 @@ package vttp.batch5.ssf.noticeboard.controllers;
 import java.io.StringReader;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -69,8 +68,10 @@ public class NoticeController {
         } catch (Exception e) {
             System.out.println(e);
 
+            model.addAttribute("error", e);
             return "view3";
         }
+        
     }
 
     @GetMapping("/status")

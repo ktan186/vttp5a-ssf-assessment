@@ -14,6 +14,9 @@
 
 		<p>I/O error on POST request for "http://localhost:3000/notice: Connection refused</p>
 		<br><br>
+		<p>There seems to be an error with the following request:</p>
+		<p data-th-text="${error}"></p>
+		<br><br>
 
         <a th:href="@{/}">Back</a>
         <!-- <form th:action="@{/}" method="get">
